@@ -6,7 +6,7 @@ define(['buildable','underscore'], function(Buildable, undef) {
 		dictionaries: {},
 
 		init: function(dictionaries) {
-			this.dictionaries = _.extend(this.dictionaries, dictionaries);
+			this.define(dictionaries);
 		},
 
 		define: function(name, dictionary) {
