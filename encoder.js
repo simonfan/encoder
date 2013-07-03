@@ -29,7 +29,9 @@ define(['buildable','underscore'], function(Buildable, undef) {
 
 			if (dictionary) {
 				_.each(dictionary.ini, function(ini, index) {
-					str = str.replace( new RegExp(ini, 'g'), dictionary.res[ index ]);
+					var regexp = typeof ini === 'object' ? ini : new RegExp(ini, 'g');
+
+					str = str.replace(regexp, dictionary.res[ index ]);
 				});
 			}
 
@@ -41,7 +43,9 @@ define(['buildable','underscore'], function(Buildable, undef) {
 
 			if (dictionary) {
 				_.each(dictionary.ini, function(ini, index) {
-					str = str.replace( new RegExp(dictionary.res[ index ], 'g'), ini);
+					var regexp = typeof dictionary.res[ index ] === 'object' ? dictionary.res[ index ] : new RegExp(dictionary.res[ index ]);
+
+					str = str.replace(regexp, ini);
 				});
 			}
 
