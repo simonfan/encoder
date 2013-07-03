@@ -4,7 +4,7 @@ define(['jquery','encoder'], function($, Encoder) {
 	var encoder = Encoder.build({
 		'spaced-title': {
 			ini: ['-', ' '],
-			res: ['_-_', '-']
+			res: ['_', '-']
 		}
 	});
 
