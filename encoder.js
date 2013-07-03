@@ -6,7 +6,7 @@ define(['buildable','underscore'], function(Buildable, undef) {
 		dictionaries: {},
 
 		init: function(dictionaries) {
-			this.define(dictionaries);
+			this.dictionaries = _.extend(this.dictionaries, dictionaries);
 		},
 
 		define: function(name, dictionary) {
@@ -29,7 +29,7 @@ define(['buildable','underscore'], function(Buildable, undef) {
 
 			if (dictionary) {
 				_.each(dictionary.ini, function(ini, index) {
-					str = str.replace(ini, dictionary.res[ index ]);
+					str = str.replace( new RegExp(ini, 'g'), dictionary.res[ index ]);
 				});
 			}
 
@@ -41,7 +41,7 @@ define(['buildable','underscore'], function(Buildable, undef) {
 
 			if (dictionary) {
 				_.each(dictionary.ini, function(ini, index) {
-					str = str.replace(dictionary.res[ index ], ini);
+					str = str.replace( new RegExp(dictionary.res[ index ], 'g'), ini);
 				});
 			}
 
