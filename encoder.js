@@ -43,7 +43,7 @@ define(['buildable','underscore'], function(Buildable, undef) {
 
 			if (dictionary) {
 				_.each(dictionary.ini, function(ini, index) {
-					var regexp = typeof dictionary.res[ index ] === 'object' ? dictionary.res[ index ] : new RegExp(dictionary.res[ index ]);
+					var regexp = typeof dictionary.res[ index ] === 'object' ? dictionary.res[ index ] : new RegExp(dictionary.res[ index ], 'g');
 
 					str = str.replace(regexp, ini);
 				});
