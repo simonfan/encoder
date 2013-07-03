@@ -1,0 +1,11 @@
+{
+  "name": "Encoder",
+  "version": "0.0.1",
+  "dependencies": {
+    "underscore": "latest",
+    "requirejs": "latest",
+    "qunit": "latest",
+    "buildable": "git://github.com/simonfan/buildable.git"
+  },
+  "main": "encoder.js"
+}
