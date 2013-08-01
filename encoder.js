@@ -25,7 +25,7 @@ define(['buildable','underscore'], function(Buildable, undef) {
 		encode: function(dictionary, str) {
 			dictionary = this.dictionaries[ dictionary ];
 
-			console.log(dictionary);
+	//		console.log(dictionary);
 
 			if (dictionary) {
 				_.each(dictionary.ini, function(ini, index) {
